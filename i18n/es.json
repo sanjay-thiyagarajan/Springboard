@@ -5,12 +5,12 @@
 		]
 	},
 	"springboard": "Springboard",
-	"springboard-desc": "Kullanıcıların wiki'lerine eklentiler ve temalar yüklemelerine olanak tanır",
-	"springboard-extensions-tab-name": "Eklentiler",
-	"springboard-skins-tab-name": "Temalar",
-	"springboard-api-error-loadedelsewhere": "$1 başka bir yerde zaten yüklendi (LocalSettings.php)",
-	"springboard-api-error-alreadyinstalled": "$1 zaten yüklü",
-	"springboard-api-error-notinstalled": "$1 yüklü değil",
-	"springboard-api-error-invalidtype": "Geçersiz tür. Mevcut türler => [extension, skin]",
-	"springboard-api-error-composerfile": "$1 içinde composer.json dosyası bulunamadı"
+	"springboard-desc": "Permite a los usuarios instalar extensiones y temas en sus wikis",
+	"springboard-extensions-tab-name": "Extensiones",
+	"springboard-skins-tab-name": "Apariencias",
+	"springboard-api-error-loadedelsewhere": "$1 ya está cargado en otro lugar (LocalSettings.php)",
+	"springboard-api-error-alreadyinstalled": "$1 ya está instalado",
+	"springboard-api-error-notinstalled": "$1 no está instalado",
+	"springboard-api-error-invalidtype": "Tipo inválido. Los tipos disponibles son => [extension, skin]",
+	"springboard-api-error-composerfile": "No se encontró el archivo composer.json en $1"
 }
