@@ -12,5 +12,8 @@
 	"springboard-api-error-alreadyinstalled": "$1 è già installato",
 	"springboard-api-error-notinstalled": "$1 non è installato",
 	"springboard-api-error-invalidtype": "Tipo non valido. Tipi disponibili => [extension, skin]",
-	"springboard-api-error-composerfile": "Impossibile trovare il file composer.json in $1"
+	"springboard-api-error-composerfile": "Impossibile trovare il file composer.json in $1",
+	"springboard-extensions-tab-search-placeholder": "Cerca per nome dell'estensione",
+	"springboard-skins-tab-search-placeholder": "Cerca per nome del tema",
+	"springboard-no-data": "Errore: Nessuna configurazione trovata per la versione di MediaWiki $1"
 }

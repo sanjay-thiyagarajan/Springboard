@@ -12,5 +12,8 @@
 	"springboard-api-error-alreadyinstalled": "$1 已经安装",
 	"springboard-api-error-notinstalled": "$1 尚未安装",
 	"springboard-api-error-invalidtype": "无效的类型。可用类型 => [extension, skin]",
-	"springboard-api-error-composerfile": "无法在 $1 中找到 composer.json 文件"
+	"springboard-api-error-composerfile": "无法在 $1 中找到 composer.json 文件",
+	"springboard-extensions-tab-search-placeholder": "按扩展名搜索",
+	"springboard-skins-tab-search-placeholder": "按皮肤名搜索",
+	"springboard-no-data": "错误：未找到 MediaWiki 版本 $1 的配置"
 }

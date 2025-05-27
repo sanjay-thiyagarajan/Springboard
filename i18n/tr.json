@@ -12,5 +12,8 @@
 	"springboard-api-error-alreadyinstalled": "$1 zaten yüklü",
 	"springboard-api-error-notinstalled": "$1 yüklü değil",
 	"springboard-api-error-invalidtype": "Geçersiz tür. Mevcut türler => [extension, skin]",
-	"springboard-api-error-composerfile": "$1 içinde composer.json dosyası bulunamadı"
+	"springboard-api-error-composerfile": "$1 içinde composer.json dosyası bulunamadı",
+	"springboard-extensions-tab-search-placeholder": "Eklenti adına göre ara",
+	"springboard-skins-tab-search-placeholder": "Tema adına göre ara",
+	"springboard-no-data": "Hata: MediaWiki sürümü $1 için yapılandırma bulunamadı"
 }
