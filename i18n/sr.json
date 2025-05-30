@@ -12,5 +12,8 @@
 	"springboard-api-error-alreadyinstalled": "$1 je već instaliran",
 	"springboard-api-error-notinstalled": "$1 nije instaliran",
 	"springboard-api-error-invalidtype": "Nevažeći tip. Dostupni tipovi => [extension, skin]",
-	"springboard-api-error-composerfile": "Nije moguće pronaći composer.json fajl u $1"
+	"springboard-api-error-composerfile": "Nije moguće pronaći composer.json fajl u $1",
+	"springboard-extensions-tab-search-placeholder": "Pretraži po imenu ekstenzije",
+	"springboard-skins-tab-search-placeholder": "Pretraži po imenu teme",
+	"springboard-no-data": "Greška: Nije pronađena konfiguracija za MediaWiki verziju $1"
 }
