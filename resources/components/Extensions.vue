@@ -217,6 +217,17 @@ module.exports = {
           return;
       }
     }
+
+    const updateData = (updatedItem) => {
+        const index = allData.value.findIndex(item => item.id === updatedItem.id);
+        if (index !== -1) {
+            const newAllData = [...allData.value];
+            newAllData[index]['action'] = updatedItem;
+            allData.value = newAllData;
+            search();
+        }
+    };
+
     return {
       'data': finalData,
       allData,
@@ -227,6 +238,7 @@ module.exports = {
       'noSearchResultsMsg': mw.msg('mw-widgets-mediasearch-noresults'),
       sort,
       onSort,
+      updateData,
       isFetched,
       'columns': [
         {id: 'name', label: 'Extension Name', allowSort: true},
@@ -238,9 +250,9 @@ module.exports = {
     };
 	},
     methods: {
-        submit ( data ) {
+        submit ( itemData ) {
             var api = new mw.Api();
-            var action = data['action'].toLowerCase();
+            var action = itemData['action'].toLowerCase();
             if ( action == 'enable' ) {
                 action = 'install';
             } else if ( action == 'disable' ) {
@@ -249,18 +261,24 @@ module.exports = {
             var payload = {
                 action: 'springboard',
                 wtaction: action,
-                wtname: data['id'],
-                wtrepo: data.hasOwnProperty('repository') ? data['repository'] : false,
-                wtcommit: data['commit'],
-                wtdbupdate: (data.hasOwnProperty('additional steps') && data['additional steps'].includes('database update')) ?? false,
-                wtcomposer: (data.hasOwnProperty('additional steps') && data['additional steps'].includes('composer update')) ?? false,
-                wtbranch: data['branch'],
+                wtname: itemData['id'],
+                wtrepo: itemData.hasOwnProperty('repository') ? itemData['repository'] : false,
+                wtcommit: itemData['commit'],
+                wtdbupdate: (itemData.hasOwnProperty('additional steps') && itemData['additional steps'].includes('database update')) ?? false,
+                wtcomposer: (itemData.hasOwnProperty('additional steps') && itemData['additional steps'].includes('composer update')) ?? false,
+                wtbranch: itemData['branch'],
                 wttype: 'extension',
-                wtbundled: data.hasOwnProperty('repository') ? data['bundled'] : false
+                wtbundled: itemData.hasOwnProperty('repository') ? itemData['bundled'] : false
             };
-            api.postWithToken( 'csrf', payload ).then( function (res) {
-                mw.notify( res.springboard.result );
-              // Response handling
+            api.postWithToken( 'csrf', payload ).then( (res) => {
+              mw.notify( res.springboard.result );
+              if (res.springboard.result === 'success') {
+                  const updatedItem = { ...itemData };
+                  updatedItem.exists = !itemData.exists;
+                  updatedItem.action = updatedItem.exists ? 'Disable' : (updatedItem.bundled ? 'Enable' : 'Install');
+
+                  this.updateData(updatedItem);
+                }
             } ).fail( function ( code, msg ) {
                 mw.notify( api.getErrorMessage( msg ), { type: 'error' } );
             } );
