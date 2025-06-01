@@ -12,5 +12,8 @@
 	"springboard-api-error-alreadyinstalled": "$1はすでにインストールされています",
 	"springboard-api-error-notinstalled": "$1はインストールされていません",
 	"springboard-api-error-invalidtype": "無効なタイプです。利用可能なタイプ => [extension, skin]",
-	"springboard-api-error-composerfile": "$1にcomposer.jsonファイルが見つかりませんでした"
+	"springboard-api-error-composerfile": "$1にcomposer.jsonファイルが見つかりませんでした",
+	"springboard-extensions-tab-search-placeholder": "拡張機能名で検索",
+	"springboard-skins-tab-search-placeholder": "スキン名で検索",
+	"springboard-no-data": "エラー：MediaWikiバージョン$1の設定が見つかりません"
 }
